@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "label": "%settings_sandbox_extension_group1_label%",
+    "properties": {
+      "sandbox-extension.personName": {
+        "label": "%settings_sandbox_extension_personName_label%",
+        "default": "Jolie"
+      }
+    }
+  }
+]

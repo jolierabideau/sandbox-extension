@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     // ts-node needs this to load webpack.config.ts for some reason. Errs otherwise
     // https://webpack.js.org/configuration/configuration-languages/#typescript
     // Using a separate config file just for webpack.config.ts by using environment variable
