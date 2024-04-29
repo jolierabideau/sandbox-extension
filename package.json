@@ -1,9 +1,9 @@
 {
-  "name": "paranext-extension-template",
+  "name": "sandbox-extension",
   "private": true,
   "version": "0.0.1",
   "main": "src/main.js",
-  "types": "src/types/paranext-extension-template.d.ts",
+  "types": "src/types/sandbox-extension.d.ts",
   "author": "Paranext",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,14 @@
   "browserslist": [],
   "peerDependencies": {
     "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "react-dom": ">=18.2.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "@types/jest": "^29.5.12",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.2"
   },
   "dependencies": {
     "@sillsdev/scripture": "^1.4.3",
