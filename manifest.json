@@ -1,13 +1,17 @@
 {
-  "name": "sandbox-extension",
+  "name": "sandBoxExtension",
   "version": "0.0.1",
-  "description": "Extension template for Paranext. Powered by webpack",
+  "publisher": "paranext",
+  "displayData": "assets/displayData.json",
   "author": "Paranext",
   "license": "MIT",
   "main": "src/main.ts",
+  "extensionDependencies": {},
+  "elevatedPrivileges": [],
   "types": "src/types/sandbox-extension.d.ts",
   "menus": "contributions/menus.json",
   "settings": "contributions/settings.json",
   "projectSettings": "contributions/projectSettings.json",
+  "localizedStrings": "contributions/localizedStrings.json",
   "activationEvents": []
 }
