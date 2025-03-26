@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "label": "%project_settings_sandbox_extension_group1_label%",
+    "properties": {
+      "sandbox-extension.randomName": {
+        "label": "%project_settings_sandbox_extension_randomName_label%",
+        "description": "%project_settings_sandbox_extension_randomName_description%",
+        "default": "Bob",
+        "includeProjectTypes": ["ParatextStandard"]
+      }
+    }
+  }
+]

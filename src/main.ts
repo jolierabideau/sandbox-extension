@@ -24,10 +24,15 @@ const reactWebViewProvider: IWebViewProviderWithType = {
   },
 };
 
+// const defaultRandomName = papi.projectSettings.getDefault(
+//   'sandbox-extension.randomName',
+//   'ParatextStandard',
+// );
+
 export async function activate(context: ExecutionActivationContext): Promise<void> {
   logger.info('Extension template is activating!');
 
-  const userNamePromise = papi.settings.registerValidator(
+  const personNamePromise = papi.settings.registerValidator(
     'sandbox-extension.personName',
     async (newValue) => {
       // logger is not working- not able to post to console through this
@@ -37,6 +42,20 @@ export async function activate(context: ExecutionActivationContext): Promise<voi
     },
   );
 
+  const randomNamePromise = papi.projectSettings.registerValidator(
+    'sandbox-extension.randomName',
+    async (newValue) => {
+      // logger is not working- not able to post to console through this
+      logger.info(newValue);
+      // allow all sets to this setting
+      return true;
+    },
+  );
+
+  // const sandboxExtensionPDPPromise = papi.projectDataProviders.registerProjectDataProviderEngineFactory(
+  //   'sandboxExtension',
+  // )
+
   papi.webViews.getWebView(reactWebViewProvider.webViewType, undefined, { existingId: '?' });
 
   const reactWebViewProviderPromise = papi.webViewProviders.register(
@@ -44,7 +63,11 @@ export async function activate(context: ExecutionActivationContext): Promise<voi
     reactWebViewProvider,
   );
 
-  context.registrations.add(await userNamePromise, await reactWebViewProviderPromise);
+  context.registrations.add(
+    await personNamePromise,
+    await reactWebViewProviderPromise,
+    await randomNamePromise,
+  );
 }
 
 export async function deactivate() {

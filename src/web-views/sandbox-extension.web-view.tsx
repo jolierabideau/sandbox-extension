@@ -1,16 +1,14 @@
 import { useSetting } from '@papi/frontend/react';
-import { useCallback } from 'react';
+import { Button } from 'platform-bible-react';
 
 globalThis.webViewComponent = function SandboxExtension() {
-  const [name, setNameInternal] = useSetting('sandbox-extension.personName', 'Jolie 1');
-  // const [nameTemp, setNameTemp] = useState(name);
-
-  const setName = useCallback(
-    (newName: string) => {
-      setNameInternal(newName);
-    },
-    [setNameInternal],
-  );
+  const [personName, setPersonName] = useSetting('sandbox-extension.personName', 'Jolie 1');
+  // const [randomName, setRandomName] = useProjectSetting(
+  //   'helloWorld',
+  //   'hwtest',
+  //   'sandbox-extension.randomName',
+  //   'Bob 1',
+  // );
 
   return (
     <div>
@@ -18,8 +16,11 @@ globalThis.webViewComponent = function SandboxExtension() {
         Sandbox Extension <span className="framework">React</span>
       </div>
       <div>
-        <h2>{name}</h2>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <h2>Person name (user setting): {personName}</h2>
+        <input value={personName} onChange={(e) => setPersonName(e.target.value)} />
+      </div>
+      <div>
+        <Button variant="outline">Test Button</Button>
       </div>
     </div>
   );
